@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+   "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="30000000" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- Khach Hang -->
+		<action name="dangnhapkhachhang"
+			class="com.test.struts2.action.DangnhapkhachhangAction">
+			<result name="success">/views/user/Thongtinkhachhang.jsp</result>
+			<result name="error">/views/user/Dangnhap.jsp</result>
+		</action>
+		<action name="dangxuatkhachhang"
+			class="com.test.struts2.action.DangnhapkhachhangAction"
+			method="logout">
+			<result name="success">/views/user/Dangnhap.jsp</result>
+		</action>
+		<action name="dangkikhachhang"
+			class="com.test.struts2.action.DangkikhachhangAction">
+			<result name="success">/views/user/Dangnhap.jsp</result>
+			<result name="error">/views/user/Dangkikhachhang.jsp</result>
+		</action>
+		<action name="capnhatthongtinkhachang"
+			class="com.test.struts2.action.CapnhatthongtinkhachhangAction">
+			<result name="success">/views/user/Thongtinkhachhang.jsp</result>
+			<result name="error">/views/user/Thongtinkhachhang.jsp</result>
+		</action>
+		<action name="thaydoimatkhaukhachhang"
+			class="com.test.struts2.action.ThaydoimatkhaukhachhangAction">
+			<result name="success">/views/user/Thaydoimatkhaukhachhang.jsp</result>
+			<result name="error">/views/user/Thaydoimatkhaukhachhang.jsp</result>
+		</action>
+		<action name="diachimacdinh"
+			class="com.test.struts2.action.LayphuongxaAction">
+			<result name="success">/views/user/Diachilayhangmacdinh.jsp</result>
+			<result name="error">/views/user/Diachilayhangmacdinh.jsp</result>
+		</action>
+
+		<action name="capnhatdiachimacdinh"
+			class="com.test.struts2.action.CapnhatdiachimacdinhAction">
+			<result name="success" type="redirect">/views/user/diachimacdinh</result>
+			<result name="error">/views/user/Diachilayhangmacdinh.jsp</result>
+		</action>
+		<action name="thongtindauvaotaodonhangmoi"
+			class="com.test.struts2.action.LayphuongxaAction">
+			<result name="success">/views/user/Taodonhangmoi.jsp</result>
+			<result name="error">/views/user/Taodonhangmoi.jsp</result>
+		</action>
+		<action name="taodonhangmoi"
+			class="com.test.struts2.action.TaodonhangAction">
+			<result name="success">/views/user/Quanlyvandon.jsp</result>
+			<result name="error" type="redirect">/views/user/thongtindauvaotaodonhangmoi
+			</result>
+		</action>
+		<action name="timkiemdonhangkhachhang"
+			class="com.test.struts2.action.TimkiemdonhangkhachhangAction">
+			<result name="success">/views/user/Quanlyvandon.jsp</result>
+			<result name="error">/views/user/Quanlyvandon.jsp</result>
+		</action>
+
+		<action name="danhgiashipper"
+			class="com.test.struts2.action.DanhgiaShipperAction">
+			<result name="success">/views/user/Danhgiashipper.jsp</result>
+			<result name="error">/views/user/Danhgiashipper.jsp</result>
+		</action>
+		<action name="quenmatkhau"
+			class="com.test.struts2.action.QuenmatkhaukhachAction">
+			<result name="success">/views/user/Resetpasskhach.jsp</result>
+			<result name="error">/views/user/Quenmatkhau.jsp</result>
+		</action>
+		<action name="quenpasskhach"
+			class="com.test.struts2.action.QuenpasskhachAction">
+			<result name="success">/views/user/Dangnhap.jsp</result>
+			<result name="error">/views/user/Quenmatkhau.jsp</result>
+		</action>
+		
+		<!-- sssssssssssssssssssssssssssssssssssShipperssssssssssssssssssssssssssssssssssssssssssss -->
+		
+		
+		<action name="dangnhapshipper"
+			class="com.test.struts2.action.DangnhapShipperAction">
+			<result name="success">/views/shipper/ThongtinShipper.jsp</result>
+			<result name="error">/views/shipper/Dangnhap.jsp</result>
+		</action>
+		<action name="dangkishipper"
+			class="com.test.struts2.action.DangkiShipperAction">
+			<result name="success">/views/shipper/Dangnhap.jsp</result>
+			<result name="error">/views/shipper/DangkiShipper.jsp</result>
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">200485760</param>
+				<param name="fileUpload.allowedTypes">text/plain,image/jpeg,image/png</param>
+			</interceptor-ref>
+		</action>
+		<action name="capnhatthongtinshipper"
+			class="com.test.struts2.action.CapnhatthongtinShipperAction">
+			<result name="success">/views/shipper/ThongtinShipper.jsp</result>
+			<result name="error">/views/shipper/ThongtinShipper.jsp</result>
+		</action>
+
+		<action name="dangxuatshipper"
+			class="com.test.struts2.action.DangnhapShipperAction" method="logout">
+			<result name="success">/views/shipper/Dangnhap.jsp</result>
+		</action>
+		<action name="thaydoimatkhaushipper"
+			class="com.test.struts2.action.ThaydoimatkhauShipperAction">
+			<result name="success">/views/shipper/ThaydoimatkhauShipper.jsp</result>
+			<result name="error">/views/shipper/ThaydoimatkhauShipper.jsp</result>
+		</action>
+		<action name="listdonhangmoi"
+			class="com.test.struts2.action.ListDonhangmoiAction">
+			<result name="success">/views/shipper/Nhandon.jsp</result>
+			<result name="error">/views/shipper/Nhandon.jsp</result>
+		</action>
+		<action name="nhandon"
+			class="com.test.struts2.action.ListDonhangmoiAction" method="nhandon">
+			<result name="success">/views/shipper/Nhandon.jsp</result>
+			<result name="error">/views/shipper/Nhandon.jsp</result>
+		</action>
+		<action name="xacnhanlayhang"
+			class="com.test.struts2.action.XacnhanlayhangAction">
+			<result name="success">/views/shipper/Xacnhanlayhang.jsp</result>
+			<result name="error">/views/shipper/Xacnhanlayhang.jsp</result>
+		</action>
+		<action name="layhang"
+			class="com.test.struts2.action.XacnhanlayhangAction" method="layhang">
+			<result name="success">/views/shipper/Xacnhanlayhang.jsp</result>
+			<result name="error">/views/shipper/Xacnhanlayhang.jsp</result>
+		</action>
+		<action name="xacnhangiaohang"
+			class="com.test.struts2.action.XacnhangiaohangAction">
+			<result name="success">/views/shipper/Xacnhangiaohang.jsp</result>
+			<result name="error">/views/shipper/Xacnhangiaohang.jsp</result>
+		</action>
+		<action name="giaohang"
+			class="com.test.struts2.action.XacnhangiaohangAction"
+			method="giaohang">
+			<result name="success">/views/shipper/Xacnhangiaohang.jsp</result>
+			<result name="error">/views/shipper/Xacnhangiaohang.jsp</result>
+		</action>
+		<action name="quanlydondagiao"
+			class="com.test.struts2.action.QuanlydondagiaoAction">
+			<result name="success">/views/shipper/Quanlydondagiao.jsp</result>
+			<result name="error">/views/shipper/Quanlydondagiao.jsp</result>
+		</action>
+		<action name="doanhthushipper">
+			<result>/views/shipper/DoanhThuShipper.jsp</result>
+		</action>
+		<action name="xemdanhgia"
+			class="com.test.struts2.action.XemdanhgiaShipperAction">
+			<result name="success">/views/shipper/Xemdanhgia.jsp</result>
+			<result name="error">/views/shipper/Xemdanhgia.jsp</result>
+		</action>
+		<action name="timkiemdonkhach"
+			class="com.test.struts2.action.QuanlydondagiaoAction" method="dontheomacuashipper">
+			<result name="success">/views/shipper/Quanlydondagiao.jsp</result>
+			<result name="error">/views/shipper/Quanlydondagiao.jsp</result>
+		</action>
+		<action name="quenmatkhauship"
+			class="com.test.struts2.action.QuenmatkhaushipperAction">
+			<result name="success">/views/shipper/Resetpassship.jsp</result>
+			<result name="error">/views/shipper/Quenmatkhauship.jsp</result>
+		</action>
+		<action name="quenpassship"
+			class="com.test.struts2.action.QuenpassshipperAction">
+			<result name="success">/views/shipper/Dangnhap.jsp</result>
+			<result name="error">/views/shipper/Resetpassship.jsp</result>
+		</action>
+		<!-- sssssssssssssssssssssssssPhan ADMIN O DAYssssssssssssssssssssssssssssssssssssssssssssssssss -->
+		
+		<action name="inadmin">
+			<result>/views/admin/Login.jsp</result>
+		</action>
+		<action name="admin"
+			class="com.test.struts2.action.LoginAction">
+			<result name="success">/views/admin/Thongtinadmin.jsp</result>
+			<result name="error">/views/admin/Login.jsp</result>
+		</action>
+		<action name="outadmin">
+			<result>/views/admin/Login.jsp</result>
+		</action>
+		<action name="admins">
+			<result>/views/admin/Thongtinadmin.jsp</result>
+		</action>
+		<action name="listuser"
+			class="com.test.struts2.action.ListUserAction">
+			<result name="success">/views/admin/ListUser.jsp</result>
+			<result name="error">/views/admin/ListUser.jsp</result>
+		</action>
+		<action name="listshipper"
+			class="com.test.struts2.action.ListShipperAction">
+			<result name="success">/views/admin/ListShipper.jsp</result>
+			<result name="error">/views/admin/ListShipper.jsp</result>
+		</action>
+		<action name="listlockuser"
+			class="com.test.struts2.action.ListLockAction">
+			<result name="success">/views/admin/ListLockUser.jsp</result>
+			<result name="error">/views/admin/ListLockUser.jsp</result>
+		</action>
+		<action name="lockuser"
+			class="com.test.struts2.action.LockUserAction">
+			<result name="success">/views/admin/ListUser.jsp</result>
+			<result name="error">/views/admin/ListUser.jsp</result>
+		</action>
+		<action name="openuser"
+			class="com.test.struts2.action.OpenUserAction">
+			<result name="success">/views/admin/ListLockUser.jsp</result>
+			<result name="error">/views/admin/ListLockUser.jsp</result>
+		</action>
+		<action name="listlockshipper"
+			class="com.test.struts2.action.ListLockShipperAction">
+			<result name="success">/views/admin/ListLockShipper.jsp</result>
+			<result name="error">/views/admin/ListLockShipper.jsp</result>
+		</action>
+		<action name="lockshipper"
+			class="com.test.struts2.action.LockShipperAction">
+			<result name="success">/views/admin/ListShipper.jsp</result>
+			<result name="error">/views/admin/ListShipper.jsp</result>
+		</action>
+
+		<action name="openshipper"
+			class="com.test.struts2.action.OpenShipperAction">
+			<result name="success">/views/admin/ListLockShipper.jsp</result>
+			<result name="error">/views/admin/ListLockShipper.jsp</result>
+		</action>
+
+		<action name="trangchu">
+			<result>index.jsp</result>
+		</action>
+		<action name="acceptDonHangUser"
+			class="com.test.struts2.action.ListDonHangCanXacNhanAction">
+			<result name="success">/views/admin/XacNhanDonHangUser.jsp</result>
+			<result name="error">/views/admin/XacNhanDonHangUser.jsp</result>
+		</action>
+		<action name="xacnhandon"
+			class="com.test.struts2.action.ListDonHangCanXacNhanAction"
+			method="xacnhandon">
+			<result name="success">/views/admin/XacNhanDonHangUser.jsp</result>
+			<result name="error">/views/admin/XacNhanDonHangUser.jsp</result>
+		</action>
+		<action name="tuchoinhandon"
+			class="com.test.struts2.action.ListDonHangCanXacNhanAction"
+			method="tuchoinhandon">
+			<result name="success">/views/admin/XacNhanDonHangUser.jsp</result>
+			<result name="error">/views/admin/XacNhanDonHangUser.jsp</result>
+		</action>
+		<action name="doanhthu">
+			<result>/views/admin/DoanhThuAdmin.jsp</result>
+		</action>
+		<action name="quanlytinhtrangdon"
+			class="com.test.struts2.action.QuanlytinhtrangdonAction">
+			<result name="success">/views/admin/Quanlydon.jsp</result>
+			<result name="error">/views/admin/Quanlydon.jsp</result>
+		</action>
+		<action name="timdontheomadon"
+			class="com.test.struts2.action.QuanlytinhtrangdonAction" method="timdontheomadon">
+			<result name="success">/views/admin/Quanlydon.jsp</result>
+			<result name="error">/views/admin/Quanlydon.jsp</result>
+		</action>
+	</package>
+</struts>
