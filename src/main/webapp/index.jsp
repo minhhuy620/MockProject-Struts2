@@ -63,7 +63,7 @@
 								CSKH: 1900 1800</a></li>
 						<li class="hidden-xs"><a href="tel: 0939999999"><i
 								class="fa fa-phone"></i> Kinh doanh: 093 9999 999 </a></li>
-						<li><a href="inadmin"><span class="hidden-xs"></span></a></li>
+						<li><a href="inadmin">Admin<span class="hidden-xs"></span></a></li>
 					</ul>
 				</div>
 				<!-- box-admin -->
