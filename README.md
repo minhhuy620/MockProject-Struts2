@@ -1,0 +1,1 @@
+# MockProject-Struts2
